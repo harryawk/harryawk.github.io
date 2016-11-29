@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>DENIAL OF SERVICE ATTACK</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" media="screen">
+    <!-- <link rel="stylesheet" type="text/css" href="stylesheets/normalize_skeleton.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="stylesheets/skeleton.css"> -->
+  </head>
+	<body>
+		<section class="page-header">
+      <h1 class="project-name">
+        <div class="judul-dua">Denial of Service Attack</div>
+      </h1>
+      <div class="fake"></div>
+    </section>
+		<section class="main-content">
+			<center><a href="index.html"><button>Back</button></a></center>
+			<h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pendahuluan</h3>
+			<p>Denial of Service attack merupakan suatu teknik yang menggunakan celah dari request handling suatu server. Teknik ini disebut Denial of Service karena teknik ini bertujuan untuk membuat server tidak dapat lagi memberikan service kepada client manapun. Salah satu teknik untuk menyebabkan Denial of Service dari suatu server adalah dengan melakukan <i>flooding request</i>.</p>
+
+			<h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Skenario Pengujian</h3>
+			<p>Berikut hal yang dapat dilakukan untuk melancarkan Denial of Service attack</p>
+			<ol>
+				<em>Preparation Phase :</em>
+				<li>Download aplikasi LOIC dari link <a href="https://sourceforge.net/projects/loic/?source=typ_redirect">berikut</a></li>
+				<li>Matikan antivirus yang sedang berjalan pada komputer Anda, atau tambahkan ignorance terhadap file LOIC.exe pada antivirus Anda</li>
+				<li>Buka aplikasi LOIC dari file yang sudah diekstrak tadi</li>
+				<br>
+				<em>Execution Phase :</em>
+				<li>Masukkan URL atau IP address dari server victim di field dari form "Select your target", lalu klik tombol "Lock on" di sebelahnya</li>
+				<li>Anda dapat memodifikasi field-field pada form "Attack Options". Pada kasus kami saat ini, kami akan membiarkan optionsnya default kecuali checkbox "Wait for Reply" akan kami uncheck, dan Method dari attack kami akan kami set dengan method UDP Attack</li>
+				<li>Lancarkan serangan dengan mengklik tombol "IMMA CHARGIN MAH LAZER"</li>
+				<li>Tunggu hingga server down. Anda dapat memonitornya melalui isup.me/url=atau-ip-dari-victim. Contoh pada kasus kami : isup.me/oktanitb.weebly.com</li>
+			</ol>
+
+			<h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Hasil Pengujian</h3>
+
+			<p>Hasil yang kami dapatkan pada 22.30 tanggal 23 November 2016 dengan melakukan skenario pengujian diatas adalah seperti gambar berikut.</p>
+
+			<b>Dari Laman oktan</b><hr>
+			<img src="img/oktan.png"><br><br><br><br>
+
+			<b>Dari Laman isup.me</b><hr>
+			<img src="img/isup.png">
+
+			<p>Apabila Anda sedang malas meload gambar tersebut, kami beritahukan bahwa hasil pengujiannya berhasil pada waktu tersebut. Dengan kata lain, web server dari oktanitb.weebly.com pada 22.30 tanggal 23 November 2016 down. Web server ini tercatat down selama 4 menit.</p>
+
+			<h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Simpulan</h3>
+
+			<p>Dari attack ini kami menyimpulkan: <br>
+				<ol>
+					<li>Denial of Service attack sangat mungkin dilakukan untuk server yang belum dirancang untuk menangani banyak request yang konkuren</li>
+					<li>Attack dapat dilakukan melalui transport layer (TCP atau UDP) atau dapat juga melalui protokol HTTP</li>
+				</ol>
+			</p>
+			<p>Denial of Service dapat berdampak fatal, terutama pada availability server. Oleh karena itu, sebisa mungkin dicegah. Sudah ada service yang dapat mengantisipasi Denial of Service attack, seperti CloudFlare.</p>
+
+			<footer class="site-footer">
+        <span class="site-footer-credits">This page was authored by <a href="https://github.com/harryawk">Harry Alvin Waidan Kefas</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a></span>
+      </footer>
+			&nbsp;
+		</section>
+	</body>
+<html>

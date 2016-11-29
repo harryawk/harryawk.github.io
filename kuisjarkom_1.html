@@ -1,0 +1,59 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>SQL INJECTION</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css" media="screen">
+    <!-- <link rel="stylesheet" type="text/css" href="stylesheets/normalize_skeleton.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="stylesheets/skeleton.css"> -->
+  </head>
+	<body>
+		<section class="page-header">
+      <h1 class="project-name">
+        <div class="judul-dua">SQL Injection</div>
+      </h1>
+      <div class="fake"></div>
+    </section>
+		<section class="main-content">
+			<center><a href="index.html"><button>Back</button></a></center>
+			
+			<h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Pendahuluan</h3>
+			<p>SQL injection merupakan suatu teknik yang menyalahgunakan celah keamanan basis data dari suatu aplikasi. Teknik ini disebut SQL injection karena menyisipkan kode SQL yang sebenarnya tidak diinginkan oleh pembuat aplikasi. Kode SQL ini dapat disisipkan di form atau pada http get (url).</p>
+
+			<h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Skenario Pengujian dan Hasil Pengujian</h3>
+
+			<p>Misal pada form</p>
+
+			<form><input id="username" type="text" placeholder="username" />
+			<input id="username" type="password" placeholder="password" /></form>Sepintas tak ada yang aneh, namun orang yang telah memprogram web akan dapat mengira kode SQL yang digunakan untuk login.<!--more--> Seperti <br><br>
+			<pre class="lang:mysql decode:true">$query = "SELECT * FROM `user` where `username`='$username' and `password`='$password';"</pre>
+			dimana $username dan $password akan berisi string yang diisikan pada form.
+
+			<p>Lalu bagaimana jika kita mengisinya dengan kode SQL? membuatnya menjadi mengeksekusi pertintah yang tidak sesuai? misalnya dengan mengisi username sebagai "'; -- OR 1=1" akan mengubah query menjadi
+			<code><span style="color: #000000;">SELECT * FROM `user` where `username`='' OR 1=1;</span> -- ' and `password`='$password';</code></p>
+
+			<p>dimana yang berwarna hitam adalah kode sql yang dieksekusi, sementara teks abu-abu akan menjadi komentar dan akan diabaikan. OR 1=1 akan mengakibatkan perintah SQL menjadi selalu benar dan akan mengembalikan semua yang ada di tabel user.</p>
+
+			<p>Sampai saat ini SQL injection masih menjadi masalah keamanan. Sebagai contoh adalah website yang ditemukan oleh penulis ini.</p>
+			<br>
+			
+			<img src="https://s11.postimg.org/aib84zr8j/login.png" style="max-width:100%;width:auto\9"/>
+			<br><br>
+			<img src="https://s11.postimg.org/wutz3ehir/guru.png" style="max-width:100%;width:auto\9"/>
+			<br>
+
+			<h3><a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Simpulan</h3>
+			<p>SQL injection dapat berdampak fatal, terutama pada laman login. Oleh karena itu sebisa mungkin dicegah. Sudah banyak bahasa pemrograman yang memperkenalkan konsep prepared statement yang dapat mencegah SQL injection. Prepared statement adalah mengirim query awal dan parameter data secara terpisah lalu parameter yang dikirim tetap diolah sebagai parameter.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-credits">This page was authored by <a href="https://github.com/nugroho-s">Nugroho Satriyanto</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a></span>
+      </footer>
+			&nbsp;
+
+		</section>
+	</body>
+<html>
