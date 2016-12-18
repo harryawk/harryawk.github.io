@@ -1,0 +1,8 @@
+<IfModule mod_rewrite.c>    
+    RewriteEngine on
+    RewriteRule ^dosen_/penguji/?$ dosen_/penguji.php [NC,L]
+    RewriteRule ^dosen_/pembimbing/?$ dosen_/pembimbing.php [NC,L]
+    RewriteRule ^tu_/?$ tu_/tu.php [NC,L]
+    RewriteRule ^timta_/?$ timta_/timta.php [NC,L]
+	RewriteRule ^wa/?$ wa/index.php [NC,L]
+</IfModule>
